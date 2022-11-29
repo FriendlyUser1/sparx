@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sparx</title>
+	<link rel="stylesheet" href="./styles.css" />
+	<link rel="icon" href="./images/favicon.ico" />
+</head>
+
+<body class="body">
+	<div class="container">
+		<header class="header">
+			<h1>
+				<a href="https://www.sparxmaths.com" target="_blank"><img aria-hidden="true" alt="Sparx"
+						src="./images/sparx_logo.svg" /></a>
+				Homework Manager
+			</h1>
+		</header>
+
+		<main class="form-container">
+			<section class="form-box">
+				<div class="form-box-content">
+					<noscript aria-hidden="true">
+						<div class="error">
+							Sparx needs JavaScript to run. Please enable scripting in your
+							browser.
+						</div>
+					</noscript>
+					<div class="inner-form-container">
+						<div class="form-title">
+							<b>Add homework item</b>
+						</div>
+
+						<form class="function-form" id="add-form" onsubmit="addItem(); return false">
+							<div class="form-group">
+								<label class="input-label" for="add-id">Item id:</label>
+								<input class="input" type="text" name="add-id" id="add-id" value="" autofocus=""
+									oninput="formInput('add')" />
+							</div>
+							<div class="form-group">
+								<label class="input-label" for="add-answer">Answer:</label>
+								<input class="input" type="text" name="add-answer" id="add-answer" value="" autofocus=""
+									oninput="formInput('add')" />
+							</div>
+							<div class="form-group form-buttons">
+								<button class="button disabled" id="add-button" type="submit" tabindex="0" disabled>
+									Add
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer-container" id="footer-text">
+				<div class="footer-contents">
+					<span class="copyright">
+						Sparx Learning™ logo and other artwork ©
+						<a href="https://find-and-update.company-information.service.gov.uk/company/07907042" target="_blank">Sparx
+							Limited</a>
+						2016-2022,</span>
+					<span class="copyright">
+						Website ©
+						<a href="https://github.com/FriendlyUser1" target="_blank">FriendlyUser1</a>
+						2022</span>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="./app.js"></script>
+</body>
+
+</html>
