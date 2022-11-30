@@ -241,6 +241,33 @@ a {
 	color: red;
 }
 
+/* output */
+.output-container {
+	padding: 10px;
+	text-align: center;
+	border-radius: 2px;
+	margin: 0 0 15px 0;
+
+	justify-content: center;
+	align-content: center;
+
+	display: none;
+}
+
+.output {
+	cursor: pointer;
+	padding: 0 10px;
+	max-height: 50%;
+	max-width: 50%;
+	border-radius: 5px;
+}
+
+.output p {
+	color: black;
+	font-size: 1.2em;
+	font-weight: 200;
+}
+
 /* footer */
 
 .footer {

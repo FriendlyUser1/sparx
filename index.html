@@ -23,12 +23,18 @@
 		<main class="form-container">
 			<section class="form-box">
 				<div class="form-box-content">
+					<div class="output-container">
+						<div class="output" onclick="clearOutput()">
+						</div>
+					</div>
+
 					<noscript aria-hidden="true">
 						<div class="error">
 							Sparx needs JavaScript to run. Please enable scripting in your
 							browser.
 						</div>
 					</noscript>
+
 					<div class="inner-form-container">
 						<div class="form-title">
 							<b>Add homework item</b>
@@ -48,6 +54,25 @@
 							<div class="form-group form-buttons">
 								<button class="button disabled" id="add-button" type="submit" tabindex="0" disabled>
 									Add
+								</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="inner-form-container">
+						<div class="form-title">
+							<b>Get homework item</b>
+						</div>
+
+						<form class="function-form" id="get-form" onsubmit="getItem(); return false">
+							<div class="form-group">
+								<label class="input-label" for="get-id">Item id:</label>
+								<input class="input" type="text" name="get-id" id="get-id" value="" autofocus=""
+									oninput="formInput('get')" />
+							</div>
+							<div class="form-group form-buttons">
+								<button class="button disabled" id="get-button" type="submit" tabindex="0" disabled>
+									Get
 								</button>
 							</div>
 						</form>
