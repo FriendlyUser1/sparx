@@ -109,6 +109,10 @@ body {
 	border-radius: 5px;
 }
 
+.inner-form-container:last-child {
+	margin-top: 10px;
+}
+
 .form-title {
 	font-size: 1.2em;
 	color: #263a72;
@@ -215,7 +219,11 @@ body {
 }
 
 .button-clear {
-	max-width: 200px !important;
+	max-width: 175px !important;
+	max-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* misc form */
@@ -262,7 +270,7 @@ a {
 	cursor: pointer;
 	padding: 0 10px;
 	max-height: 50%;
-	max-width: 50%;
+	max-width: 75%;
 	border-radius: 5px;
 }
 

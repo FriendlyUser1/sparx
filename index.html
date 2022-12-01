@@ -10,7 +10,7 @@
 	<link rel="icon" href="./images/favicon.ico" />
 </head>
 
-<body class="body">
+<body class="body" onload="formInput('add'); formInput('get');">
 	<div class="container">
 		<header class="header">
 			<h1>
@@ -18,7 +18,7 @@
 						src="./images/sparx_logo.svg" /></a>
 				Homework Manager
 			</h1>
-			<button class="button button-clear" onclick="localStorage.clear();output(false,'Storage cleared');">Clear
+			<button class="button button-clear" onclick="localStorage.clear();output(false,'Storage cleared!');">Clear
 				storage</button>
 		</header>
 
@@ -42,7 +42,7 @@
 							<b>Add homework item</b>
 						</div>
 
-						<form class="function-form" id="add-form" onsubmit="addItem(); return false">
+						<form class="function-form" id="add-form" onsubmit="addItem(); formInput('add'); return false">
 							<div class="form-group">
 								<label class="input-label" for="add-id">Item id:</label>
 								<input class="input" type="text" name="add-id" id="add-id" value="" autofocus=""
@@ -66,12 +66,13 @@
 							<b>Get homework item</b>
 						</div>
 
-						<form class="function-form" id="get-form" onsubmit="getItem(); return false">
+						<form class="function-form" id="get-form" onsubmit="getItem(); formInput('get'); return false">
 							<div class="form-group">
 								<label class="input-label" for="get-id">Item id:</label>
 								<input class="input" type="text" name="get-id" id="get-id" value="" autofocus=""
 									oninput="formInput('get')" />
 							</div>
+							<input type="hidden" value="test">
 							<div class="form-group form-buttons">
 								<button class="button disabled" id="get-button" type="submit" tabindex="0" disabled>
 									Get

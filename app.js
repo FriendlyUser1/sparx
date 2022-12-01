@@ -1,8 +1,11 @@
+// inputs
+
 const formInput = (formName) => {
 	let btn = document.getElementById(formName + "-button");
 	if (
 		document.getElementById(formName + "-id").value.length === 3 &&
-		document.getElementById(formName + "-answer").value.length > 0
+		(formName === "get" ||
+			document.getElementById(formName + "-answer").value.length > 0)
 	) {
 		if (btn.classList.contains("disabled")) {
 			btn.classList.remove("disabled");
@@ -14,11 +17,36 @@ const formInput = (formName) => {
 	}
 };
 
+// processing
+
 const addItem = () => {
 	let form = document.getElementById("add-form"),
 		id = form.elements[0].value,
 		answer = form.elements[1].value;
-	(form.elements[0].value = ""), (form.elements[1].value = "");
+
+	try {
+		localStorage.setItem(id, answer);
+		output(false, `Item ${id} added successfully!`);
+	} catch {
+		output(
+			true,
+			"Error adding item, try refreshing the page or clearing storage (top right)."
+		);
+	}
+
+	form.elements[0].value = "";
+	form.elements[1].value = "";
+};
+
+const getItem = () => {
+	let id = document.getElementById("get-id").value;
+
+	if (!localStorage[id]) return output(true, "No items found with ID " + id);
+
+	let storedItem = localStorage.getItem(id);
+	output(false, `Item ${id} has answer "${storedItem}"`);
+
+	document.getElementById("get-id").value = "";
 };
 
 // output
@@ -32,7 +60,7 @@ const output = (isError, message) => {
 		: "rgba(27, 255, 57, 0.37)";
 	outputNode.parentElement.style.display = "flex";
 	outputNode.appendChild(document.createElement("p"));
-	outputNode.children[0].appendChild(document.createTextNode(message));
+	outputNode.children[0].innerHTML = message;
 };
 
 const clearOutput = () => {
